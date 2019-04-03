@@ -1,0 +1,16 @@
+<table class="w-full picture">
+  <tbody>
+    {{#each (chunk 10 @picture.cells) as |row|}}
+      <tr>
+        {{#each row as |cell|}}
+          <td
+            class="border border-grey-darkest w-1/10 {{concat "bg-" cell.color}}"
+            onclick={{action "updateCellColor" cell}}
+            onmousemove={{action "mouseMove" cell}}
+            role="button">
+          </td>
+        {{/each}}
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
